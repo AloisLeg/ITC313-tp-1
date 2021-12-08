@@ -112,3 +112,8 @@ int dayOfYear(Date d) {
 std::string toString(Date d) {
     return std::to_string(d.day()) + "/" + std::to_string(d.month()) + "/" + std::to_string(d.year()) ;
 }
+
+std::ostream& operator<< (std::ostream& os, const Date& date){
+    os << date.day() << "/"  << date.month() << "/" << date.year();
+    return os;
+}
