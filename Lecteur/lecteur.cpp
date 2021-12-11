@@ -11,10 +11,10 @@
 #include <list>
 #include <iostream>
 
-Lecteur::Lecteur(std::string id, std::string name, std::string , std::list<int> liste) : _id(id), _name(name), _surname(), _liste(liste) {
+Lecteur::Lecteur(int id, std::string name, std::string surname, std::list<int> liste) : _id(id), _name(name), _surname(surname), _liste(liste) {
 }
 
-std::string Lecteur::id() const {
+int Lecteur::id() const {
    return _id; 
 }
 
@@ -27,7 +27,7 @@ std::string Lecteur::surname() const {
 }
 
 std::list<int> Lecteur::liste() const {
-   return _liste.begin(); 
+   return _liste; 
 }
 
 void Lecteur::updateId(std::string newId) {
@@ -35,8 +35,15 @@ void Lecteur::updateId(std::string newId) {
 }
 
 void Lecteur::addToList(int newISBN) {
-   _liste.push_back(newISBN); 
+   _liste.push_front(newISBN); 
 }
+
+
+//std::ostream& operator<< (std::ostream& os, const std::list<int>& liste){
+  
+    
+  //  return os;
+//}
 
 /**
  * 
