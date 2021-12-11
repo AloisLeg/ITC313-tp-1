@@ -100,6 +100,8 @@ int getDaysInMonth(int month)  {
     return 30;
 }
 
+//test pour sublime merge
+
 int dayOfYear(Date d) {
     auto day=0;
     for (auto i=1;i<d.month();i++) {
