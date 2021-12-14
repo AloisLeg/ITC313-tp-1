@@ -1,12 +1,25 @@
 #include <iostream>
 #include <string>
 #include <string>
-#include "livre.cpp"
+#include "../Date/date.h"
+#include "../Livre/Livre.h"
+#include "../Lecteur/lecteur.h"
 
 
-class Emprunt{
+
+
+class Emprunt : public Livre, public Lecteur {
 public: 
+	Emprunt(Date dateemprunt, Lecteur lecteur, Livre livre);
+	Date dateemprunt() const;
+	Lecteur lecteur() const;
+	Livre livre() const;
+
 
 private:
-
-}
+	Date _dateemprunt;
+	Lecteur _lecteur;
+	Livre _livre;
+	
+	
+};
