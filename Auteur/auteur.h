@@ -1,3 +1,5 @@
+ #ifndef AUTEUR
+#define AUTEUR
 #include "date.h"
 #include <string>
 
@@ -19,3 +21,6 @@ class Auteur {
 
 
 };
+std::ostream& operator<< (std::ostream& os, Auteur& auteur);
+
+#endif

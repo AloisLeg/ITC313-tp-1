@@ -1,12 +1,16 @@
+ #ifndef LIVRE
+#define LIVRE
+
  #include <string>
  #include "date.h"
+ #include "auteur.h"
 
 class Livre {
 
 public:
-	Livre(std::string titre, std::string auteur, std::string langue, std::string genre, long int ISBN, Date date);
+	Livre(std::string titre, Auteur auteur, std::string langue, std::string genre, long int ISBN, Date date);
 	std::string titre() const;
-	std::string auteur() const;
+	Auteur auteur()const;
 	std::string langue() const;
 	std::string genre() const;
 	long int ISBN() const;
@@ -14,7 +18,7 @@ public:
 
 private:
 	std::string _titre;
-	std::string _auteur;
+	Auteur _auteur;
 	std::string _langue;
 	std::string _genre;
 	long int _ISBN;
@@ -22,3 +26,5 @@ private:
 
 
 };
+
+#endif

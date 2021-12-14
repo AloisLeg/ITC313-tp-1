@@ -1,7 +1,9 @@
 #include "auteur.h"
 
-Auteur::Auteur(int id, std::string nom, std::string prenom, Date datenaissance) : _id(id), _nom(nom), _prenom(prenom), _datenaissance(datenaissance) {
-//Ceci est un test
+Auteur::Auteur(int id, std::string nom, std::string prenom, Date
+datenaissance) : _id(id), _nom(nom), _prenom(prenom),
+_datenaissance(datenaissance) {
+
 } 
 
 int Auteur::id() const {
@@ -19,3 +21,9 @@ std::string Auteur::prenom() const {
 Date Auteur::datenaissance() const {
 	return _datenaissance;
 }
+
+std::ostream& operator<< (std::ostream& os, Auteur& auteur){ 
+	os << "Auteur n° : " << auteur.id() << " --> " << auteur.nom() << " " << auteur.prenom() << "né(e) le :  " << auteur.datenaissance() << std::endl; 
+	return os;
+}
+

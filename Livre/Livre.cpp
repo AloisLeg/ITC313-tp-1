@@ -2,14 +2,15 @@
 #include "date.h"
 
 
-Livre::Livre(std::string titre,std::string auteur, std::string langue, std::string genre, long int ISBN, Date date) : _titre(titre), _auteur(auteur), _langue(langue), _genre(genre), _ISBN(ISBN), _date(date) {
-}
+Livre::Livre(std::string titre, Auteur auteur, std::string langue,
+std::string genre, long int ISBN, Date date) : _titre(titre), _auteur(auteur),
+_langue(langue), _genre(genre), _ISBN(ISBN), _date(date) { }
 
 std::string Livre::titre() const {
 	return _titre;
 }
 
-std::string Livre::auteur() const {
+Auteur Livre::auteur() const{
 	return _auteur;
 }
 
