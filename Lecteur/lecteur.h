@@ -15,23 +15,23 @@
 
 class Lecteur {
 public:
-   Lecteur(std::string _id, std::string _name="Inconnu", std::string _surname="Inconnu", std::list<int> _liste ={});
+   Lecteur(int _id, std::string _name="Inconnu", std::string _surname="Inconnu", std::list<int> _liste={});
    std::string name() const;
    std::string surname() const;
-   std::string id() const;
+   int id() const;
    std::list<int> liste() const;
-   void updateId(std::string newId);
+   void updateId(int newId);
    void addToList(int newISBN);
    
 private:
-   std::string _id;
+   int _id;
    std::string _name;
    std::string _surname;
    std::list<int> _liste;
    
 };
 
-
+std::ostream& operator<< (std::ostream& os, const std::list<int>& liste);
 
 #endif // DATE_H
 

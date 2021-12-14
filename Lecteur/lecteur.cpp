@@ -5,11 +5,13 @@
  * @Project: C++ Programming - ESIREM 3A IT
  * @Summary:  Methods - Helpers functions
 */
+
 #include "lecteur.h"
 //#include <assert.h> 
 #include <string>
 #include <list>
 #include <iostream>
+
 
 Lecteur::Lecteur(int id, std::string name, std::string surname, std::list<int> liste) : _id(id), _name(name), _surname(surname), _liste(liste) {
 }
@@ -30,7 +32,7 @@ std::list<int> Lecteur::liste() const {
    return _liste; 
 }
 
-void Lecteur::updateId(std::string newId) {
+void Lecteur::updateId(int newId) {
    _id = newId; 
 }
 
@@ -39,11 +41,13 @@ void Lecteur::addToList(int newISBN) {
 }
 
 
-//std::ostream& operator<< (std::ostream& os, const std::list<int>& liste){
-  
-    
-  //  return os;
-//}
+std::ostream& operator<< (std::ostream& os, const std::list<int>& liste){
+    /*for (int i; i<liste.end(); i++){
+      os << liste{i} << std::endl;
+    }*/
+
+    return os;
+}
 
 /**
  * 
