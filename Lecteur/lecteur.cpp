@@ -42,9 +42,10 @@ void Lecteur::addToList(int newISBN) {
 
 
 std::ostream& operator<< (std::ostream& os, const std::list<int>& liste){
-    /*for (int i; i<liste.end(); i++){
-      os << liste{i} << std::endl;
-    }*/
+   os << "La liste d'iSBN est : "  << std::endl;
+    for (auto it= liste.begin(); it!=liste.end(); ++it){
+      os << "-" <<*it << std::endl;
+    }
 
     return os;
 }
