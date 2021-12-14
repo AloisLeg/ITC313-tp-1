@@ -13,7 +13,7 @@
 #include <iostream>
 
 
-Lecteur::Lecteur(int id, std::string name, std::string surname, std::list<int> liste) : _id(id), _name(name), _surname(surname), _liste(liste) {
+Lecteur::Lecteur(int id, std::string name, std::string surname, std::list<long int> liste) : _id(id), _name(name), _surname(surname), _liste(liste) {
 }
 
 int Lecteur::id() const {
@@ -28,7 +28,7 @@ std::string Lecteur::surname() const {
     return _surname;
 }
 
-std::list<int> Lecteur::liste() const {
+std::list<long int> Lecteur::liste() const {
    return _liste; 
 }
 
@@ -36,12 +36,12 @@ void Lecteur::updateId(int newId) {
    _id = newId; 
 }
 
-void Lecteur::addToList(int newISBN) {
+void Lecteur::addToList(long int newISBN) {
    _liste.push_front(newISBN); 
 }
 
 
-std::ostream& operator<< (std::ostream& os, const std::list<int>& liste){
+std::ostream& operator<< (std::ostream& os, const std::list<long int>& liste){
    os << "La liste d'iSBN est : "  << std::endl;
     for (auto it= liste.begin(); it!=liste.end(); ++it){
       os << "-" <<*it << std::endl;
