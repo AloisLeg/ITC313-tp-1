@@ -1,5 +1,6 @@
 #include "Livre.h"
 #include "../Date/date.h"
+#include "../Auteur/auteur.h"
 #include <iostream>
 
 int main () {

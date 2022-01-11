@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Emprunt.h"
+#include "../Date/date.h"
 
 Emprunt::Emprunt(Date dateemprunt, Lecteur lecteur, Livre livre) : _dateemprunt(dateemprunt), _lecteur(lecteur), _livre(livre) {}
 

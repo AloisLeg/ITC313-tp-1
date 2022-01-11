@@ -1,1 +1,1 @@
-Auteur.o: Auteur.cpp auteur.h date.h
+Auteur.o: Auteur.cpp auteur.h ../Date/date.h

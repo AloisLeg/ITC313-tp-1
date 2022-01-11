@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include "../Date/date.h"
 
 #ifndef LECTEUR_H
 #define LECTEUR_H

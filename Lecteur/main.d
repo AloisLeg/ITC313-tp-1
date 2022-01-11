@@ -1,1 +1,1 @@
-main.o: main.cpp lecteur.h
+main.o: main.cpp lecteur.h ../Date/date.h
