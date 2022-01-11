@@ -19,7 +19,7 @@ $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(TARGET) $(OBJS) 
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) $(DEPFLAGS) -c  $<
+	$(CXX) $(CXXFLAGS) $(DEPFLAGS) -c  $< -o $@
 
 clean:
 	rm -f *.o *.d

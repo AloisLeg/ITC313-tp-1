@@ -8,9 +8,9 @@
 
 
 
-class Emprunt : public Livre, public Lecteur {
+class Emprunt {
 public: 
-	Emprunt(Date dateemprunt, Lecteur lecteur, Livre livre);
+	Emprunt(Date dateemprunt, Lecteur& lecteur, Livre livre);
 	Date dateemprunt() const;
 	Lecteur lecteur() const;
 	Livre livre() const;
@@ -21,5 +21,6 @@ private:
 	Lecteur _lecteur;
 	Livre _livre;
 	
-	
+std::ostream& operator<< (std::ostream& os, Emprunt& emprunt);
+
 };
