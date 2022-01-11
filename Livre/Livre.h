@@ -27,4 +27,7 @@ private:
 
 };
 
+std::ostream& operator<< (std::ostream& os, const Livre& livre);
+
+
 #endif

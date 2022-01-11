@@ -12,4 +12,5 @@ int main () {
 		std::cout << "ISBN  :  " << Berserk.ISBN() << std::endl;
 		std::cout << "Date  :  " << Berserk.date() << std::endl;
 		std::cout << "Infos :  " << KM << std::endl;
+		std::cout << Berserk;
 }

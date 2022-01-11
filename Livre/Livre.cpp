@@ -29,3 +29,8 @@ long int Livre::ISBN() const {
 Date Livre::date() const {
 	return _date;
 }
+
+std::ostream& operator<< (std::ostream& os, const Livre& livre){
+	os << livre.titre() << std::endl; 
+	return os;
+}
