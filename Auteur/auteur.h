@@ -1,4 +1,4 @@
- #ifndef AUTEUR
+#ifndef AUTEUR
 #define AUTEUR
 #include "../Date/date.h"
 #include <string>

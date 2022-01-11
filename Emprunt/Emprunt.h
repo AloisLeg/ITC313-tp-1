@@ -1,3 +1,6 @@
+#ifndef AUTEUR
+#define AUTEUR
+
 #include <iostream>
 #include <string>
 #include <string>
@@ -24,3 +27,6 @@ private:
 std::ostream& operator<< (std::ostream& os, Emprunt& emprunt);
 
 };
+
+
+#endif
