@@ -1,4 +1,5 @@
 #include "auteur.h"
+#include "../Date/date.h"
 
 Auteur::Auteur(int id, std::string nom, std::string prenom, Date
 datenaissance) : _id(id), _nom(nom), _prenom(prenom),
