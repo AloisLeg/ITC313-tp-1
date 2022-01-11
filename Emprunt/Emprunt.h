@@ -1,5 +1,5 @@
-#ifndef AUTEUR
-#define AUTEUR
+#ifndef EMPRUNT
+#define EMPRUNT
 
 #include <iostream>
 #include <string>
@@ -24,9 +24,9 @@ private:
 	Lecteur _lecteur;
 	Livre _livre;
 	
-std::ostream& operator<< (std::ostream& os, Emprunt& emprunt);
+
 
 };
-
+std::ostream& operator<< (std::ostream& os, Emprunt& emprunt);
 
 #endif
