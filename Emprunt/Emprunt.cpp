@@ -21,7 +21,6 @@ Lecteur Emprunt::lecteur() const{
 	return _lecteur;
 }
 
-
 std::ostream& operator<< (std::ostream& os, Emprunt& emprunt){
 	os << " L'emprunt de "<< emprunt.livre() << " effectué le " << emprunt.dateemprunt() << std::endl; 
 	return os;

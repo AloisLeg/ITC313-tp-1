@@ -4,33 +4,45 @@
 #include <iostream>
 
 
-Biblio::Biblio(std::list<Auteur> listAuteurs , std::list<Livre> listLivres, std::list<Emprunts> livresEmpruntes) : _listAuteurs(listAuteurs), _listLivres(listLivres), _livresEmpruntes(livresEmpruntes) {
+Biblio::Biblio(std::list<Auteur> listAuteurs , std::list<Livre> listLivres, std::list<Emprunt> livresEmpruntes) : _listAuteurs(listAuteurs), _listLivres(listLivres), _livresEmpruntes(livresEmpruntes) {
 }
 
 
-std::list<Auteur> listAuteurs(){
+std::list<Auteur> Biblio::listAuteurs(){
    return _listAuteurs;
 }
 
-std::list<Livre> listLivres(){
+std::list<Livre> Biblio::listLivres(){
    return _listLivres;
 }
 
-std::list<Emprunts> livresEmpruntes(){
+std::list<Emprunt> Biblio::livresEmpruntes(){
    return _livresEmpruntes;
 }
 
 
-void addToListAuteurs(Auteur auteur){
+void Biblio::addToListAuteurs(Auteur auteur){
 	_listAuteurs.push_front(auteur); 
 }
 
 
-void addToListLivres(Livre livre){
+void Biblio::addToListLivres(Livre livre){
 	_listLivres.push_front(livre); 
 }
 
 
-void addToLivresEmpruntes(Emprunt emprunt){
+void Biblio::addToLivresEmpruntes(Emprunt emprunt){
 	_livresEmpruntes.push_front(emprunt); 
+}
+
+
+std::ostream& operator<< (std::ostream& os, Biblio& biblio){
+
+
+   os << "La liste d'emprunts est : "  << std::endl;
+    for (auto it= biblio.livresEmpruntes().begin(); it!=biblio.livresEmpruntes().end(); ++it){
+      os << "-" <<*it << std::endl;
+   }
+
+   return os;
 }

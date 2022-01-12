@@ -1,6 +1,11 @@
 #include <string.h> 
 #include <list>
 #include <iostream>
+#include "../Auteur/auteur.h"
+#include "../Livre/Livre.h"
+#include "../Emprunt/Emprunt.h"
+#include "../Date/date.h"
+#include "../Lecteur/lecteur.h"
 
 
 #ifndef BIBLIO_H
@@ -11,10 +16,10 @@
 class Biblio {
 
 public:
-   Biblio(std::list<Auteur> listAuteurs , std::list<Livre> listLivres, std::list<Emprunts> livresEmpruntes);
+   Biblio(std::list<Auteur> listAuteurs , std::list<Livre> listLivres, std::list<Emprunt> livresEmpruntes);
    std::list<Auteur> listAuteurs();
    std::list<Livre> listLivres();
-   std::list<Emprunts> livresEmpruntes();
+   std::list<Emprunt> livresEmpruntes();
    void addToListAuteurs(Auteur auteur);
    void addToListLivres(Livre livre);
    void addToLivresEmpruntes(Emprunt emprunt);
@@ -22,11 +27,11 @@ public:
 private:
    std::list<Auteur> _listAuteurs;
    std::list<Livre> _listLivres;
-   std::list<Emprunts> _livresEmpruntes;
+   std::list<Emprunt> _livresEmpruntes;
   
 };
 
-
+std::ostream& operator<< (std::ostream& os, Biblio& biblio);
 
 
 #endif // BIBLIO_H
