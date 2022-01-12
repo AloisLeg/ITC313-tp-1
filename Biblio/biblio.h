@@ -32,6 +32,6 @@ private:
 };
 
 std::ostream& operator<< (std::ostream& os, Biblio& biblio);
-
+//std::ostream& operator<< (std::ostream& os, Emprunt& emprunt);
 
 #endif // BIBLIO_H

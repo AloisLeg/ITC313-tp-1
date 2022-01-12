@@ -30,7 +30,19 @@ Date Livre::date() const {
 	return _date;
 }
 
+void Livre::changeDispo() {
+	if (_dispo == true){
+		_dispo = false;
+	}
+	else _dispo = true;
+}
+
+bool Livre::isDispo() const {
+	return _dispo;
+}
+
 std::ostream& operator<< (std::ostream& os, const Livre& livre){
 	os << livre.titre() << std::endl; 
+	os << livre.isDispo() << std::endl; 
 	return os;
 }

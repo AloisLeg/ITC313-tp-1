@@ -36,8 +36,21 @@ void Biblio::addToLivresEmpruntes(Emprunt emprunt){
 }
 
 
-std::ostream& operator<< (std::ostream& os, Biblio& biblio){
 
+
+
+
+
+std::ostream& operator<< (std::ostream& os, Biblio& biblio){
+   os << "La liste d'auteurs est : "  << std::endl;
+    for (auto it= biblio.listAuteurs().begin(); it!=biblio.listAuteurs().end(); ++it){
+      os << "-" <<*it << std::endl;
+    }
+
+    os << "La liste de livres est : "  << std::endl;
+    for (auto it= biblio.listLivres().begin(); it!=biblio.listLivres().end(); ++it){
+      os << "-" <<*it << std::endl;
+   }
 
    os << "La liste d'emprunts est : "  << std::endl;
     for (auto it= biblio.livresEmpruntes().begin(); it!=biblio.livresEmpruntes().end(); ++it){

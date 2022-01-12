@@ -7,7 +7,7 @@
 #include "../Date/date.h"
 #include "../Lecteur/lecteur.h"
 #include "biblio.h"
-
+#include "algorithm"
 
 
 int main()
@@ -46,12 +46,23 @@ int main()
 	mainBiblio.addToListLivres(TaraDuncan2);
 
 
-
-	/*for (auto it= mainBiblio.livresEmpruntes().begin(); it!=mainBiblio.livresEmpruntes().end(); it++){
+	//std::cout << mainBiblio.livresEmpruntes()[0]) << std::endl;
+	/*for (it= mainBiblio.livresEmpruntes().begin(); it!=mainBiblio.livresEmpruntes().end(); it++){
       std::cout << "-" <<*it << std::endl;
     }*/
 
-	//std::cout << mainBiblio << std::endl;
+    /*for (auto& i : mainBiblio.livresEmpruntes()) {
+    std::cout << i;
+	}*/
+
+	auto p = mainBiblio.livresEmpruntes().begin();
+  while(p != mainBiblio.livresEmpruntes().end()) {
+    std::cout << *p << " ";
+    p++;
+  }
+
+
+//	std::cout << mainBiblio << std::endl;
 
 
 	return 0;

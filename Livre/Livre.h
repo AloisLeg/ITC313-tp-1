@@ -14,7 +14,9 @@ public:
 	std::string langue() const;
 	std::string genre() const;
 	long int ISBN() const;
-	Date date() const;
+	Date date() const;	
+	void changeDispo();
+	bool isDispo() const;
 
 private:
 	std::string _titre;
@@ -23,6 +25,7 @@ private:
 	std::string _genre;
 	long int _ISBN;
 	Date _date;
+	bool _dispo = true;
 
 
 };
