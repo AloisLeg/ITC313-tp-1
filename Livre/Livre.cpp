@@ -43,6 +43,10 @@ bool Livre::isDispo() const {
 
 std::ostream& operator<< (std::ostream& os, const Livre& livre){
 	os << livre.titre() << std::endl; 
-	os << livre.isDispo() << std::endl; 
+	if (livre.isDispo()){
+		os << "Dispo" << std::endl;
+	}
+	else os << "Pas Dispo" << std::endl;  
+	
 	return os;
 }

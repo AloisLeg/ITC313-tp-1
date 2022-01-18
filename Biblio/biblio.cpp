@@ -36,26 +36,41 @@ void Biblio::addToLivresEmpruntes(Emprunt emprunt){
 }
 
 
+std::ostream& operator<< (std::ostream& os, std::list<Auteur> auteurs){ 
+	for (auto it= auteurs.begin(); it!=auteurs.end(); ++it){
+      os << "-" <<*it << std::endl;
+    }
+	return os;
+}
 
+std::ostream& operator<< (std::ostream& os, std::list<Livre> livres){ 
+	for (auto it= livres.begin(); it!= livres.end(); ++it){
+      os << "-" <<*it << std::endl;
+    }
+	return os;
+}
 
+std::ostream& operator<< (std::ostream& os, std::list<Emprunt> emprunts){ 
+	for (auto it= emprunts.begin(); it!=emprunts.end(); ++it){
+      os << "-" <<*it << std::endl;
+    }
+	return os;
+}
 
 
 
 std::ostream& operator<< (std::ostream& os, Biblio& biblio){
-   os << "La liste d'auteurs est : "  << std::endl;
-    for (auto it= biblio.listAuteurs().begin(); it!=biblio.listAuteurs().end(); ++it){
-      os << "-" <<*it << std::endl;
-    }
+   os << "La liste d'auteurs est : "  << std::endl << std::endl;
+   os << biblio.listAuteurs() << std::endl;
 
-    os << "La liste de livres est : "  << std::endl;
-    for (auto it= biblio.listLivres().begin(); it!=biblio.listLivres().end(); ++it){
-      os << "-" <<*it << std::endl;
-   }
 
-   os << "La liste d'emprunts est : "  << std::endl;
-    for (auto it= biblio.livresEmpruntes().begin(); it!=biblio.livresEmpruntes().end(); ++it){
-      os << "-" <<*it << std::endl;
-   }
+   os << "La liste de livres est : "  << std::endl << std::endl;
+   os << biblio.listLivres() << std::endl;
+
+
+   os << "La liste d'emprunts est : "  << std::endl << std::endl;
+   os << biblio.livresEmpruntes() << std::endl;
+
 
    return os;
 }

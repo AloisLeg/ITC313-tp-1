@@ -31,6 +31,8 @@ private:
   
 };
 
+std::ostream& operator<< (std::ostream& os, std::list<Auteur> auteurs);
+
 std::ostream& operator<< (std::ostream& os, Biblio& biblio);
 //std::ostream& operator<< (std::ostream& os, Emprunt& emprunt);
 

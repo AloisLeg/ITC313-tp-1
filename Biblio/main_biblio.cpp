@@ -55,14 +55,10 @@ int main()
     std::cout << i;
 	}*/
 
-	auto p = mainBiblio.livresEmpruntes().begin();
-  while(p != mainBiblio.livresEmpruntes().end()) {
-    std::cout << *p << " ";
-    p++;
-  }
+	//std::cout << mainBiblio.livresEmpruntes();
+	//std::cout << mainBiblio.listAuteurs();
 
-
-//	std::cout << mainBiblio << std::endl;
+	std::cout << mainBiblio << std::endl;
 
 
 	return 0;
