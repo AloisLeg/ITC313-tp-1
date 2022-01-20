@@ -1,6 +1,4 @@
-../Emprunt/Emprunt.o: ../Emprunt/Emprunt.cpp ../Emprunt/Emprunt.h \
- ../Emprunt/../Date/date.h ../Emprunt/../Livre/Livre.h \
- ../Emprunt/../Livre/../Date/date.h \
- ../Emprunt/../Livre/../Auteur/auteur.h \
- ../Emprunt/../Livre/../Auteur/../Date/date.h \
- ../Emprunt/../Lecteur/lecteur.h ../Emprunt/../Lecteur/../Date/date.h
+Emprunt.o: Emprunt.cpp Emprunt.h ../Date/date.h ../Livre/Livre.h \
+ ../Livre/../Date/date.h ../Livre/../Auteur/auteur.h \
+ ../Livre/../Auteur/../Date/date.h ../Lecteur/lecteur.h \
+ ../Lecteur/../Date/date.h

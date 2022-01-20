@@ -13,4 +13,6 @@ int main () {
 		std::cout << "Date  :  " << Berserk.date() << std::endl;
 		std::cout << "Infos :  " << KM << std::endl;
 		std::cout << Berserk;
+
+		Livre Essai("Essai", KM, "Deutsch", "Ennui", 465854326, date);
 }

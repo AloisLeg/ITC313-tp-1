@@ -6,7 +6,7 @@
 
 
 Emprunt::Emprunt(Date dateemprunt, Lecteur& lecteur, Livre livre) : _dateemprunt(dateemprunt), _lecteur(lecteur), _livre(livre) {
-
+	_livre.changeDispo();
 }
 
 Date Emprunt::dateemprunt() const{

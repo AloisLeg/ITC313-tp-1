@@ -23,6 +23,7 @@ public:
    void addToListAuteurs(Auteur auteur);
    void addToListLivres(Livre livre);
    void addToLivresEmpruntes(Emprunt emprunt);
+   void emprunterLivre(Lecteur lecteur, Livre livre, Date dateEmprunt);
    
 private:
    std::list<Auteur> _listAuteurs;

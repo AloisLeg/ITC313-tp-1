@@ -35,6 +35,11 @@ void Biblio::addToLivresEmpruntes(Emprunt emprunt){
 	_livresEmpruntes.push_front(emprunt); 
 }
 
+void Biblio::emprunterLivre(Lecteur lecteur, Livre livre, Date dateEmprunt){
+		Emprunt newEmprunt(dateEmprunt, lecteur, livre);
+
+}
+
 
 std::ostream& operator<< (std::ostream& os, std::list<Auteur> auteurs){ 
 	for (auto it= auteurs.begin(); it!=auteurs.end(); ++it){
