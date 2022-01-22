@@ -43,11 +43,17 @@ bool Livre::isDispo() const {
  
 bool Livre::operator == (const Livre& l) const {
 	return 
-		l.ISBN() == _ISBN;
+		l.ISBN() == _ISBN;	
 }
 
 std::ostream& operator<< (std::ostream& os, const Livre& livre){
 	os << livre.titre() << std::endl; 
+	os << livre.auteur() << std::endl; 
+	os << livre.langue() << std::endl; 
+	os << livre.genre() << std::endl; 
+	os << livre.ISBN() << std::endl; 
+	os << livre.date() << std::endl; 
+
 	if (livre.isDispo()){
 		os << "Dispo" << std::endl;
 	}

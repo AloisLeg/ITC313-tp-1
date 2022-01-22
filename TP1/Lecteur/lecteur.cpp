@@ -49,6 +49,7 @@ std::ostream& operator<< (std::ostream& os, const Lecteur& lecteur){
    os << "id : " << lecteur.id() << std::endl;
    os << "Nom : " << lecteur.name() << std::endl;
    os << "Prénom " << lecteur.surname() << std::endl;
+   os << "Liste ISBN " << lecteur.liste() << std::endl;
 
     return os;
 }
