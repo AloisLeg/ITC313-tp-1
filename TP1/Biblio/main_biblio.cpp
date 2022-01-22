@@ -45,9 +45,7 @@ int main()
 	mainBiblio.addToListLivres(TaraDuncan);
 	mainBiblio.addToListLivres(TaraDuncan2);
 
-
-	mainBiblio.emprunterLivre(Lecteur2, TaraDuncan, Datee1);
-
+	mainBiblio.rendreLivre(Lecteur1, TaraDuncan);
 	std::cout << mainBiblio << std::endl;
 
 

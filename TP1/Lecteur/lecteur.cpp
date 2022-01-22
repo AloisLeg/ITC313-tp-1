@@ -45,6 +45,14 @@ bool Lecteur::operator == (const Lecteur& l) const {
       l.id() == _id;
 }
 
+std::ostream& operator<< (std::ostream& os, const Lecteur& lecteur){
+   os << "id : " << lecteur.id() << std::endl;
+   os << "Nom : " << lecteur.name() << std::endl;
+   os << "Prénom " << lecteur.surname() << std::endl;
+
+    return os;
+}
+
 
 std::ostream& operator<< (std::ostream& os, const std::list<long int>& liste){
    os << "La liste d'iSBN est : "  << std::endl;

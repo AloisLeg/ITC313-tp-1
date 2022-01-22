@@ -28,6 +28,6 @@ bool Emprunt::operator == (const Emprunt& e) const {
 
 
 std::ostream& operator<< (std::ostream& os, Emprunt& emprunt){
-	os << " L'emprunt de "<< emprunt.livre() << " effectué le " << emprunt.dateemprunt() << std::endl; 
+	os << " L'emprunt de "<< emprunt.livre() << " effectué le " << emprunt.dateemprunt() << " par " << emprunt.lecteur() << std::endl; 
 	return os;
 }
