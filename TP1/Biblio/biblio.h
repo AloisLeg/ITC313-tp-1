@@ -23,7 +23,9 @@ public:
    void addToListAuteurs(Auteur auteur);
    void addToListLivres(Livre livre);
    void addToLivresEmpruntes(Emprunt emprunt);
+   void removeToLivresEmpruntes(Lecteur lecteur, Livre livre);
    void emprunterLivre(Lecteur lecteur, Livre livre, Date dateEmprunt);
+   void rendreLivre(Lecteur lecteur, Livre livre);
    
 private:
    std::list<Auteur> _listAuteurs;

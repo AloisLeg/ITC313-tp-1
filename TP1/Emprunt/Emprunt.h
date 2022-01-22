@@ -17,7 +17,7 @@ public:
 	Date dateemprunt() const;
 	Lecteur lecteur() const;
 	Livre livre() const;
-
+	bool operator == (const Emprunt& e) const;
 
 private:
 	Date _dateemprunt;

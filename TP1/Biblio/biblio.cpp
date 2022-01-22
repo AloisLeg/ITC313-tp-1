@@ -35,9 +35,18 @@ void Biblio::addToLivresEmpruntes(Emprunt emprunt){
 	_livresEmpruntes.push_front(emprunt); 
 }
 
+void Biblio::removeToLivresEmpruntes(Lecteur lecteur, Livre livre){
+   for (auto it = _livresEmpruntes.begin(); it != _livresEmpruntes.end(); it++){
+      Emprunt tempEmprunt = *it;
+      if (livre == tempEmprunt.livre() && lecteur == tempEmprunt.lecteur()){
+         _livresEmpruntes.remove(tempEmprunt);
+      }
+   }
+}
+
 void Biblio::emprunterLivre(Lecteur lecteur, Livre livre, Date dateEmprunt){
 		bool indLivre = false;
-      bool indEmprunt = false;
+      bool indEmprunt = true;
 
       for (auto it = _listLivres.begin(); it != _listLivres.end(); it++){
          Livre tempLivre = *it;
@@ -47,14 +56,55 @@ void Biblio::emprunterLivre(Lecteur lecteur, Livre livre, Date dateEmprunt){
          if (indLivre == true){
             for (auto it = _livresEmpruntes.begin(); it != _livresEmpruntes.end(); it++){
                Emprunt tempEmprunt = *it;
-               if (livre == tempEmprunt.livre() && lecteur == tempEmprunt.lecteur()){
-                  indEmprunt = true;
+               if (livre == tempEmprunt.livre()){
+                  indEmprunt = false;
+               }
+               else {
                   Emprunt newEmprunt(dateEmprunt, lecteur, livre);
                   addToLivresEmpruntes(newEmprunt);
                }
             }
          }
       }
+      if (indLivre == false){
+         std::cout << "Echec de l'emprunt, le livre n'est pas dans la bibliotheque" << std::endl << std::endl;
+      }
+      else if (indEmprunt == false){
+         std::cout << "Echec de l'emprunt, le livre est déja emprunté par une autre personne" << std::endl << std::endl;
+      } 
+      else {
+         std::cout << "Nouvel emprunt effectué" << std::endl << std::endl; 
+      } 
+}
+
+void Biblio::rendreLivre(Lecteur lecteur, Livre livre){
+   bool indLivre = false;
+   bool indEmprunt = false;
+   for (auto it = _listLivres.begin(); it != _listLivres.end(); it++){
+      Livre tempLivre = *it;
+      if (livre == tempLivre){
+         indLivre = true;
+      }
+      if (indLivre == true){
+         for (auto it = _livresEmpruntes.begin(); it != _livresEmpruntes.end(); it++){
+            Emprunt tempEmprunt = *it;
+            if (livre == tempEmprunt.livre() && lecteur == tempEmprunt.lecteur()){
+               indEmprunt = true;
+               removeToLivresEmpruntes(lecteur, livre);
+            }
+         }
+      }
+   }
+
+   if (indLivre == false){
+      std::cout << "Echec du retour, le livre n'est pas dans la bibliotheque" << std::endl << std::endl;
+   }
+   else if (indEmprunt == false){
+      std::cout << "Echec du retour, le livre n'est pas emprunté ou déja emprunté par une autre personne" << std::endl << std::endl;
+   } 
+   else {
+      std::cout << "Retour confirmé" << std::endl << std::endl; 
+   } 
 }
 
 

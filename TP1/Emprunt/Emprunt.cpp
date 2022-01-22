@@ -21,6 +21,12 @@ Lecteur Emprunt::lecteur() const{
 	return _lecteur; 
 }
 
+bool Emprunt::operator == (const Emprunt& e) const {
+	return 
+		e.livre() == _livre && e.lecteur() == _lecteur;	
+}
+
+
 std::ostream& operator<< (std::ostream& os, Emprunt& emprunt){
 	os << " L'emprunt de "<< emprunt.livre() << " effectué le " << emprunt.dateemprunt() << std::endl; 
 	return os;
