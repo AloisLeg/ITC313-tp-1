@@ -60,7 +60,7 @@ std::ostream& operator<< (std::ostream& os, std::list<Emprunt> emprunts){
       os << "-" <<*it << std::endl;
     }
 	return os;
-}
+} 
 
 
 

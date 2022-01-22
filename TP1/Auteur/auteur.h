@@ -20,7 +20,7 @@ class Auteur {
 		Date _datenaissance;
 
 
-};
+}; 
 std::ostream& operator<< (std::ostream& os, Auteur& auteur);
 
 #endif

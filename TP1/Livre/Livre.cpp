@@ -40,7 +40,7 @@ void Livre::changeDispo() {
 bool Livre::isDispo() const {
 	return _dispo;
 }
-
+ 
 std::ostream& operator<< (std::ostream& os, const Livre& livre){
 	os << livre.titre() << std::endl; 
 	if (livre.isDispo()){

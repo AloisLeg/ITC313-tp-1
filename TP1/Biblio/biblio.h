@@ -30,7 +30,7 @@ private:
    std::list<Livre> _listLivres;
    std::list<Emprunt> _livresEmpruntes;
   
-};
+}; 
 
 std::ostream& operator<< (std::ostream& os, std::list<Auteur> auteurs);
 

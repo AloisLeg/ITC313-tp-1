@@ -21,7 +21,7 @@ std::string Auteur::prenom() const {
 
 Date Auteur::datenaissance() const {
 	return _datenaissance;
-}
+} 
 
 std::ostream& operator<< (std::ostream& os, Auteur& auteur){ 
 	os << "Auteur n° : " << auteur.id() << " --> " << auteur.nom() << " " << auteur.prenom() << " né(e) le :  " << auteur.datenaissance() << std::endl; 

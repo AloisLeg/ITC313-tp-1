@@ -18,7 +18,7 @@ Livre Emprunt::livre() const{
 }
 
 Lecteur Emprunt::lecteur() const{
-	return _lecteur;
+	return _lecteur; 
 }
 
 std::ostream& operator<< (std::ostream& os, Emprunt& emprunt){

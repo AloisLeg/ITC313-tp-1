@@ -26,7 +26,7 @@ private:
 	
 
 
-};
+}; 
 std::ostream& operator<< (std::ostream& os, Emprunt& emprunt);
 
 #endif
