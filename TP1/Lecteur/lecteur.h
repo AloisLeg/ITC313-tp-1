@@ -23,6 +23,7 @@ public:
    std::list<long int> liste() const;
    void updateId(int newId);
    void addToList(long int newISBN);
+   bool operator == (const Lecteur& l) const;
    
 private:
    int _id;

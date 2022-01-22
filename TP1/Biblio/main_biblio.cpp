@@ -46,17 +46,7 @@ int main()
 	mainBiblio.addToListLivres(TaraDuncan2);
 
 
-	//std::cout << mainBiblio.livresEmpruntes()[0]) << std::endl;
-	/*for (it= mainBiblio.livresEmpruntes().begin(); it!=mainBiblio.livresEmpruntes().end(); it++){
-      std::cout << "-" <<*it << std::endl;
-    }*/
-
-    /*for (auto& i : mainBiblio.livresEmpruntes()) {
-    std::cout << i;
-	}*/
-
-	//std::cout << mainBiblio.livresEmpruntes();
-	//std::cout << mainBiblio.listAuteurs();
+	mainBiblio.emprunterLivre(Lecteur2, TaraDuncan, Datee1);
 
 	std::cout << mainBiblio << std::endl;
 

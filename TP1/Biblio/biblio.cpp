@@ -36,8 +36,25 @@ void Biblio::addToLivresEmpruntes(Emprunt emprunt){
 }
 
 void Biblio::emprunterLivre(Lecteur lecteur, Livre livre, Date dateEmprunt){
-		Emprunt newEmprunt(dateEmprunt, lecteur, livre);
+		bool indLivre = false;
+      bool indEmprunt = false;
 
+      for (auto it = _listLivres.begin(); it != _listLivres.end(); it++){
+         Livre tempLivre = *it;
+         if (livre == tempLivre){
+            indLivre = true;
+         }
+         if (indLivre == true){
+            for (auto it = _livresEmpruntes.begin(); it != _livresEmpruntes.end(); it++){
+               Emprunt tempEmprunt = *it;
+               if (livre == tempEmprunt.livre() && lecteur == tempEmprunt.lecteur()){
+                  indEmprunt = true;
+                  Emprunt newEmprunt(dateEmprunt, lecteur, livre);
+                  addToLivresEmpruntes(newEmprunt);
+               }
+            }
+         }
+      }
 }
 
 

@@ -41,6 +41,11 @@ bool Livre::isDispo() const {
 	return _dispo;
 }
  
+bool Livre::operator == (const Livre& l) const {
+	return 
+		l.ISBN() == _ISBN;
+}
+
 std::ostream& operator<< (std::ostream& os, const Livre& livre){
 	os << livre.titre() << std::endl; 
 	if (livre.isDispo()){

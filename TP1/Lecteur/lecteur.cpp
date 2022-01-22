@@ -40,6 +40,11 @@ void Lecteur::addToList(long int newISBN) {
    _liste.push_front(newISBN); 
 }
 
+bool Lecteur::operator == (const Lecteur& l) const {
+   return 
+      l.id() == _id;
+}
+
 
 std::ostream& operator<< (std::ostream& os, const std::list<long int>& liste){
    os << "La liste d'iSBN est : "  << std::endl;

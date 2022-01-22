@@ -17,6 +17,7 @@ public:
 	Date date() const;	
 	void changeDispo();
 	bool isDispo() const;
+	bool operator == (const Livre& l) const;
 
 private:
 	std::string _titre;
