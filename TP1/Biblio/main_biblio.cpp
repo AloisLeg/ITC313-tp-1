@@ -32,21 +32,37 @@ int main()
 	Lecteur Lecteur2(376458, "Mélanie2", "Garcia2");
 	Emprunt Emprunt2(Datee2, Lecteur2, TaraDuncan2);
 
+
+
+	Auteur DeusEx(65343112, "Deus", "Ex", datenaissance);
+	Date date3(4, 30, 1959);
+	Livre Essai("Ragnarok", DeusEx, "Japonais", "Action", 5677654323, date3);
+
+	Emprunt Emprunt3(Datee2, Lecteur1, Essai);
+
 	std::list<Auteur> listAuteurs;
 	std::list<Livre> listLivres;
 	std::list<Emprunt> listEmprunts;
+	std::list<Lecteur> listLecteurs;
 
-	Biblio mainBiblio(listAuteurs, listLivres, listEmprunts);
+	Biblio mainBiblio(listAuteurs, listLivres, listLecteurs, listEmprunts);
 
 	mainBiblio.addToLivresEmpruntes(Emprunt1);
 	mainBiblio.addToLivresEmpruntes(Emprunt2);
+	mainBiblio.addToLivresEmpruntes(Emprunt3);
+	mainBiblio.addToListLecteurs(Lecteur1);
+	mainBiblio.addToListLecteurs(Lecteur2);
 	mainBiblio.addToListAuteurs(Jackie);
 	mainBiblio.addToListAuteurs(Jackie2);
 	mainBiblio.addToListLivres(TaraDuncan);
 	mainBiblio.addToListLivres(TaraDuncan2);
+	mainBiblio.addToListLivres(Essai);
 
-	mainBiblio.rendreLivre(Lecteur1, TaraDuncan);
-	std::cout << mainBiblio << std::endl;
+
+	std::cout << "La liste du lecteur : " <<Lecteur1.liste() << std::endl;
+	mainBiblio.livresEmpruntesPourcentage();
+	std::cout << "La liste du lecteur : " <<Lecteur1.liste() << std::endl;
+	//std::cout << mainBiblio << std::endl;
 
 
 	return 0;

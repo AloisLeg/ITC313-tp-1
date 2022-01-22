@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-Biblio::Biblio(std::list<Auteur> listAuteurs , std::list<Livre> listLivres, std::list<Emprunt> livresEmpruntes) : _listAuteurs(listAuteurs), _listLivres(listLivres), _livresEmpruntes(livresEmpruntes) {
+Biblio::Biblio(std::list<Auteur> listAuteurs , std::list<Livre> listLivres, std::list<Lecteur> listLecteurs,std::list<Emprunt> livresEmpruntes) : _listAuteurs(listAuteurs), _listLivres(listLivres), _listLecteurs(listLecteurs), _livresEmpruntes(livresEmpruntes) {
 }
 
 
@@ -20,6 +20,10 @@ std::list<Emprunt> Biblio::livresEmpruntes(){
    return _livresEmpruntes;
 }
 
+std::list<Lecteur> Biblio::listLecteurs(){
+   return _listLecteurs;
+}
+
 
 void Biblio::addToListAuteurs(Auteur auteur){
 	_listAuteurs.push_front(auteur); 
@@ -30,6 +34,9 @@ void Biblio::addToListLivres(Livre livre){
 	_listLivres.push_front(livre); 
 }
 
+void Biblio::addToListLecteurs(Lecteur lecteur){
+   _listLecteurs.push_front(lecteur); 
+}
 
 void Biblio::addToLivresEmpruntes(Emprunt emprunt){
 	_livresEmpruntes.push_front(emprunt); 
@@ -108,6 +115,38 @@ void Biblio::rendreLivre(Lecteur lecteur, Livre livre){
 }
 
 
+void Biblio::chercherLivresParAuteur(Auteur auteur){
+   for (auto it = _listLivres.begin(); it != _listLivres.end(); it++){
+      Livre tempLivre = *it;
+      if (auteur == tempLivre.auteur()){
+         std::cout << "Livre trouvé : " << tempLivre << std::endl;
+      }
+   }
+}
+
+void Biblio::chercherEmpruntsParLecteur(Lecteur lecteur){
+   for (auto it = _livresEmpruntes.begin(); it != _livresEmpruntes.end(); it++){
+      Emprunt tempEmprunt = *it;
+      if (lecteur == tempEmprunt.lecteur()){
+         std::cout << "Emprunt trouvé : " << tempEmprunt << std::endl;
+      }
+      std::cout << "Nombre d'emprunts trouvé : " << std::endl;
+   }
+}
+
+void Biblio::livresEmpruntesPourcentage(){
+   std::cout << "Livres empruntés : " << _livresEmpruntes << std::endl;
+   double pourcentage = double(_livresEmpruntes.size())/double(_listLivres.size())*100;
+   std::cout << "Pourcentage de livres empruntés : " << pourcentage << "%" << std::endl;
+}
+
+/*void Biblio::classementLecteurs(){
+   std::cout << "Classement des lecteurs : " << _livresEmpruntes << std::endl;
+   double pourcentage = _livresEmpruntes.size()/_listLivres.size*100;
+   std::cout << "Pourcentage de livres empruntés : " << pourcentage << std::endl;
+}*/
+
+
 std::ostream& operator<< (std::ostream& os, std::list<Auteur> auteurs){ 
 	for (auto it= auteurs.begin(); it!=auteurs.end(); ++it){
       os << "-" <<*it << std::endl;
@@ -121,6 +160,13 @@ std::ostream& operator<< (std::ostream& os, std::list<Livre> livres){
     }
 	return os;
 }
+
+std::ostream& operator<< (std::ostream& os, std::list<Lecteur> lecteurs){ 
+   for (auto it= lecteurs.begin(); it!=lecteurs.end(); ++it){
+      os << "-" <<*it << std::endl;
+    }
+   return os;
+} 
 
 std::ostream& operator<< (std::ostream& os, std::list<Emprunt> emprunts){ 
 	for (auto it= emprunts.begin(); it!=emprunts.end(); ++it){
@@ -138,6 +184,10 @@ std::ostream& operator<< (std::ostream& os, Biblio& biblio){
 
    os << "La liste de livres est : "  << std::endl << std::endl;
    os << biblio.listLivres() << std::endl;
+
+
+   os << "La liste des lecteurs est : "  << std::endl << std::endl;
+   os << biblio.listLecteurs() << std::endl;
 
 
    os << "La liste d'emprunts est : "  << std::endl << std::endl;

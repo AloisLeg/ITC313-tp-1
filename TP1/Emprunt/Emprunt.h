@@ -1,5 +1,5 @@
-#ifndef EMPRUNT
-#define EMPRUNT
+#ifndef EMPRUNT_H
+#define EMPRUNT_H
 
 #include <iostream>
 #include <string>
@@ -13,7 +13,7 @@
 
 class Emprunt {
 public: 
-	Emprunt(Date dateemprunt, Lecteur& lecteur, Livre livre);
+	Emprunt(Date dateemprunt, Lecteur& lecteur, Livre& livre);
 	Date dateemprunt() const;
 	Lecteur lecteur() const;
 	Livre livre() const;

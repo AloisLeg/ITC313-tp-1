@@ -1,5 +1,5 @@
-#ifndef LIVRE
-#define LIVRE
+#ifndef LIVRE_H
+#define LIVRE_H
 
  #include <string>
  #include "../Date/date.h"
@@ -32,6 +32,5 @@ private:
 };
 
 std::ostream& operator<< (std::ostream& os, const Livre& livre);
-
 
 #endif 

@@ -1,5 +1,4 @@
-	#include "auteur.h"
-#include "../Date/date.h"
+#include "auteur.h"
 
 Auteur::Auteur(int id, std::string nom, std::string prenom, Date
 datenaissance) : _id(id), _nom(nom), _prenom(prenom),
@@ -21,7 +20,12 @@ std::string Auteur::prenom() const {
 
 Date Auteur::datenaissance() const {
 	return _datenaissance;
-} 
+}
+
+bool Auteur::operator == (const Auteur& a) const {
+   return 
+      a.id() == _id;
+}
 
 std::ostream& operator<< (std::ostream& os, Auteur& auteur){ 
 	os << "Auteur n° : " << auteur.id() << " --> " << auteur.nom() << " " << auteur.prenom() << " né(e) le :  " << auteur.datenaissance() << std::endl; 

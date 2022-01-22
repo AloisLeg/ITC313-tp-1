@@ -1,5 +1,5 @@
-#ifndef AUTEUR
-#define AUTEUR
+#ifndef AUTEUR_H
+#define AUTEUR_H
 #include "../Date/date.h"
 #include <string>
 
@@ -12,6 +12,7 @@ class Auteur {
 		std::string nom() const;
 		std::string prenom() const;
 		Date datenaissance() const;
+		bool operator == (const Auteur& a) const;
 
 	private:
 		int _id;

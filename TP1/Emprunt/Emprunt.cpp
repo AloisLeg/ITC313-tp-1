@@ -5,8 +5,9 @@
 
 
 
-Emprunt::Emprunt(Date dateemprunt, Lecteur& lecteur, Livre livre) : _dateemprunt(dateemprunt), _lecteur(lecteur), _livre(livre) {
+Emprunt::Emprunt(Date dateemprunt, Lecteur& lecteur, Livre& livre) : _dateemprunt(dateemprunt), _lecteur(lecteur), _livre(livre) {
 	_livre.changeDispo();
+	_lecteur.addToList(_livre.ISBN());
 }
 
 Date Emprunt::dateemprunt() const{
@@ -28,6 +29,6 @@ bool Emprunt::operator == (const Emprunt& e) const {
 
 
 std::ostream& operator<< (std::ostream& os, Emprunt& emprunt){
-	os << " L'emprunt de "<< emprunt.livre() << " effectué le " << emprunt.dateemprunt() << " par " << emprunt.lecteur() << std::endl; 
+	os << " Emprunt de "<< emprunt.livre() << " effectué le " << emprunt.dateemprunt() << " par " << emprunt.lecteur() << std::endl; 
 	return os;
 }

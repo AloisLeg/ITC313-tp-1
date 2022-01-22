@@ -8,11 +8,7 @@ int main () {
 	Date datenaissance(11,07,1966);
 	Auteur KM(123456, "Kentaro", "Miura", datenaissance);
 	Livre Berserk("Berserk", KM, "Français", "Aventure/Horreur", 2723448126, date);
-		std::cout << "Titre   :  " << Berserk.titre() << std::endl;
-		std::cout << "ISBN  :  " << Berserk.ISBN() << std::endl;
-		std::cout << "Date  :  " << Berserk.date() << std::endl;
-		std::cout << "Infos :  " << KM << std::endl;
-		std::cout << Berserk;
+	std::cout << Berserk;
 
-		Livre Essai("Essai", KM, "Deutsch", "Ennui", 465854326, date);
+	Livre Essai("Essai", KM, "Deutsch", "Ennui", 465854326, date);
 }
