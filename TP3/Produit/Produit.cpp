@@ -25,7 +25,21 @@ double Produit::getprixunitaire() const{
 	return m_prixunitaire;
 }
 
+
+void Produit::changerquantite(double it) {
+
+	m_quantitedispo+=it;
+}
+
+
 std::ostream& operator<< (std::ostream& os, const Produit& produit){
     os << produit.gettitre() << std::endl <<"Description du produit :" << std::endl <<produit.getdescription() << std::endl <<"Quantité Disponible : " << produit.getquantitedispo()<<std::endl<<"Prix unitaire : "<<produit.getprixunitaire()<<std::endl;
     return os;
+}
+
+
+bool operator== (const Produit& produit1, const Produit& produit2){
+	if (produit1.gettitre()==produit2.gettitre())
+	{ return true;	}
+	else return false;
 }
