@@ -1,11 +1,3 @@
-/**
-  * @File:     date-main.cpp
-  * @Author:   D. Ginhac (dginhac@u-bourgogne.fr)
-  * @Date:     Fall 2021
-  * @Course:   C-C++ Programming / Esirem 3A Informatique Electronique Robotique
-  * @Summary:  Methods - Helpers functions
-  */
-
 #include "date.h"
 #include <iostream>
 
@@ -18,6 +10,6 @@ int main() {
   a_day.back();
   std::cout << "a day: " << toString(a_day) << std::endl;
 
-//tests ergsdgstg
+
   return 0;
 }

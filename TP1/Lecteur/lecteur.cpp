@@ -1,11 +1,3 @@
-/**
- * @Author: Dominique Ginhac <d0m>
- * @Lecteur:   2019-10-15T09:46:41+02:00
- * @Email:  dginhac@u-bourgogne.fr
- * @Project: C++ Programming - ESIREM 3A IT
- * @Summary:  Methods - Helpers functions
-*/
-
 #include "lecteur.h"
 #include "../Date/date.h"
 #include <string>
@@ -64,10 +56,5 @@ std::ostream& operator<< (std::ostream& os, const std::list<long int>& liste){
     return os;
 }
 
-/**
- * 
- * Helper functions 
- * 
-*/
 
  

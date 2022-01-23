@@ -13,7 +13,7 @@
 
 class Emprunt {
 public: 
-	Emprunt(Date dateemprunt, Lecteur& lecteur, Livre& livre);
+	Emprunt(Date dateemprunt, Lecteur lecteur, Livre livre);
 	Date dateemprunt() const;
 	Lecteur lecteur() const;
 	Livre livre() const;

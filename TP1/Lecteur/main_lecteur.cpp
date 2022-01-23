@@ -6,7 +6,6 @@ int main() {
   
 
   Lecteur Lecteur1(012345, "Philippe", "Bouchon");
-  //std::list<int> Lec1Liste = Lecteur1.liste();
   
   
   Lecteur1.updateId(345456);

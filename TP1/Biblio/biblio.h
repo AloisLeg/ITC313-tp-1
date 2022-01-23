@@ -21,10 +21,10 @@ public:
    std::list<Livre> listLivres();
    std::list<Emprunt> livresEmpruntes();
    std::list<Lecteur> listLecteurs();
-   void addToListAuteurs(Auteur auteur);
-   void addToListLivres(Livre livre);
-   void addToListLecteurs(Lecteur lecteur);
-   void addToLivresEmpruntes(Emprunt emprunt);
+   void addToListAuteurs(Auteur& auteur);
+   void addToListLivres(Livre& livre);
+   void addToListLecteurs(Lecteur& lecteur);
+   void addToLivresEmpruntes(Emprunt& emprunt);
    void removeToLivresEmpruntes(Lecteur lecteur, Livre livre);
    void emprunterLivre(Lecteur lecteur, Livre livre, Date dateEmprunt);
    void rendreLivre(Lecteur lecteur, Livre livre);

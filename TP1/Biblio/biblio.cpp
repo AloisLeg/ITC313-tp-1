@@ -25,20 +25,20 @@ std::list<Lecteur> Biblio::listLecteurs(){
 }
 
 
-void Biblio::addToListAuteurs(Auteur auteur){
+void Biblio::addToListAuteurs(Auteur& auteur){
 	_listAuteurs.push_front(auteur); 
 }
 
 
-void Biblio::addToListLivres(Livre livre){
+void Biblio::addToListLivres(Livre& livre){
 	_listLivres.push_front(livre); 
 }
 
-void Biblio::addToListLecteurs(Lecteur lecteur){
+void Biblio::addToListLecteurs(Lecteur& lecteur){
    _listLecteurs.push_front(lecteur); 
 }
 
-void Biblio::addToLivresEmpruntes(Emprunt emprunt){
+void Biblio::addToLivresEmpruntes(Emprunt& emprunt){
 	_livresEmpruntes.push_front(emprunt); 
 }
 
@@ -130,7 +130,7 @@ void Biblio::chercherEmpruntsParLecteur(Lecteur lecteur){
       if (lecteur == tempEmprunt.lecteur()){
          std::cout << "Emprunt trouvé : " << tempEmprunt << std::endl;
       }
-      std::cout << "Nombre d'emprunts trouvé : " << std::endl;
+      std::cout << "Nombre d'emprunts trouvé : "    << std::endl;
    }
 }
 

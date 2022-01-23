@@ -1,2 +1,1 @@
-../Lecteur/lecteur.o: ../Lecteur/lecteur.cpp ../Lecteur/lecteur.h \
- ../Lecteur/../Date/date.h
+lecteur.o: lecteur.cpp lecteur.h ../Date/date.h
